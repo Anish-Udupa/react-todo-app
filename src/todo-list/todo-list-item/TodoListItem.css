@@ -1,0 +1,20 @@
+div.todo-list-item {
+    padding: 0 10px;
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    background-color: var(--component-bg-color);
+}
+
+p.todo-list-item-name {
+    width: 100%;
+    height: auto;
+}
+
+img.todo-list-icon-cross {
+    width: 20px;
+    height: 20px;
+    scale: 0.8;
+}

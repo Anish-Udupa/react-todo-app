@@ -1,4 +1,25 @@
 div#todo-input-container {
+    width: calc(100% - 20px);
+    padding: 10px;
     display: flex;
     flex-direction: row;
+    column-gap: 10px;
+    background-color: var(--component-bg-color);
+    border-radius: 5px;
+}
+
+div#todo-input-container input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: var(--font-size);
+    color: var(--text-color);
+}
+
+div#todo-list-items-filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }

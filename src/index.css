@@ -12,7 +12,20 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: header-font;
+  src: url("fonts/JosefinSans-Regular.ttf") format(".ttf");
+  font-weight: 100;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
 :root {
+
+  /* Primary */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background-gradient1: hsl(192, 100%, 67%);
+  --check-background-gradient2: hsl(280, 87%, 65%);
 
   /* Dark Mode colors */
   --very-dark-blue: hsl(235, 21%, 11%);
@@ -25,6 +38,25 @@ code {
 
   --app-bg-color: var(--very-dark-blue);
   --component-bg-color: var(--very-dark-desaturated-blue);
-  --text-color: white;
+  --component-faded-text-color: var(--dark-grayish-blue);
+  --component-hover-text-color: var(--Light-grayish-blue-hover);
+  --component-selected-text-color: var(--bright-blue);
+  --text-color: var(--light-grayish-blue);
   --font-size: 14px;
+
+  /* Light Mode */
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
+}
+
+body.light-mode {
+  --app-bg-color: var(--very-light-grayish-blue);
+  --component-bg-color: var(--very-light-gray);
+  --component-faded-text-color: var(--dark-grayish-blue);
+  --component-hover-text-color: var(--Light-grayish-blue-hover);
+  --component-selected-text-color: var(--bright-blue);
+  --text-color: var(--very-dark-grayish-blue);
 }

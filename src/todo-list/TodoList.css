@@ -11,6 +11,7 @@ div#todo-list-header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-family: header-font;
 }
 
 div#todo-list-items-container {
@@ -27,6 +28,7 @@ div#todo-list-items-status-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: var(--component-faded-text-color);
 }
 
 div.icon-circle {
@@ -41,4 +43,24 @@ div.icon-circle {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+div.icon-circle:hover {
+    cursor: pointer;
+    border-color: var(--bright-blue);
+}
+
+div#todo-list-items-filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+p.todo-list-items-filter:hover {
+    cursor: pointer;
+    color: var(--component-hover-text-color);
+}
+
+p.todo-list-items-filter-selected {
+    color: var(--component-selected-text-color);
 }

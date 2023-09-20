@@ -13,8 +13,41 @@ p.todo-list-item-name {
     height: auto;
 }
 
+p.todo-list-item-name-completed {
+    width: 100%;
+    height: auto;
+    text-decoration: line-through;
+    text-decoration-line: line-through;
+    color: var(--component-faded-text-color);
+}
+
+div.icon-circle-filled {
+    height: 20px;
+    width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    margin: 0px 5px;
+    border: 2px solid var(--bright-blue);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(var(--check-background-gradient1), var(--check-background-gradient2));
+    
+}
+
+div.icon-circle-filled:hover {
+    cursor: pointer;
+    border-color: darkgray;
+}
+
 img.todo-list-icon-cross {
     width: 20px;
     height: 20px;
     scale: 0.8;
+}
+
+img.todo-list-icon-cross:hover {
+    cursor: pointer;
 }

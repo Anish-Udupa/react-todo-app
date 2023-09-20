@@ -8,9 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteAllCompletedTasks } from "../store/TaskReducer";
 
 function TodoList() {
-    const [ new_task, setNewTask ] = useState(null);
-    const [ current_tasks, setCurrentTasks ] = useState([]);
 
+    const [ dark_mode, setDarkMode ] = useState(true);
     const tasks = useSelector(state => state.task.tasks);
     const [ tasks_count, setTaskCount ] = useState(0);
     const [ task_filter, setTaskFilter ] = useState(0);  // 0 - all, 1 - active, 2 - completed  
@@ -24,11 +23,21 @@ function TodoList() {
         dispatch(deleteAllCompletedTasks());
     }
 
+    const toggleDarkMode = () => {
+        if(dark_mode) {
+            document.querySelector("body").classList.add("light-mode");
+        }
+        else {
+            document.querySelector("body").classList.remove("light-mode");
+        }
+        setDarkMode(!dark_mode);
+    }
+
     return (
         <div id="todo-list-container">
             <div id="todo-list-header">
                 <p>TODO</p>
-                <img src={icon_sun} alt="dark mode toggle" />
+                <img src={dark_mode? icon_sun : icon_moon} alt="dark mode toggle" onClick={toggleDarkMode} />
             </div>
             <TodoInput />
             <div id="todo-list-items-container">
@@ -38,11 +47,11 @@ function TodoList() {
                 <div id="todo-list-items-status-container">
                     <p>{tasks_count} items left</p>
                     <div id="todo-list-items-filter-container">
-                        <p onClick={() => setTaskFilter(0)}>All</p>
-                        <p onClick={() => setTaskFilter(1)}>Active</p>
-                        <p onClick={() => setTaskFilter(2)}>Completed</p>
+                        <p className={`todo-list-items-filter ${task_filter === 0 && "todo-list-items-filter-selected"}`} onClick={() => setTaskFilter(0)}>All</p>
+                        <p className={`todo-list-items-filter ${task_filter === 1 && "todo-list-items-filter-selected"}`} onClick={() => setTaskFilter(1)}>Active</p>
+                        <p className={`todo-list-items-filter ${task_filter === 2 && "todo-list-items-filter-selected"}`} onClick={() => setTaskFilter(2)}>Completed</p>
                     </div>
-                    <p onClick={handleClearCompletedTasks}>Clear Completed</p>
+                    <p className="todo-list-items-filter" onClick={handleClearCompletedTasks}>Clear Completed</p>
                 </div>
             </div>
         </div>

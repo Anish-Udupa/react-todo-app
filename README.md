@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Anish-Udupa/react-todo-app](https://github.com/Anish-Udupa/react-todo-app)
-- Live Site URL: [https://github.com/Anish-Udupa/react-todo-app/releases](https://github.com/Anish-Udupa/react-todo-app/releases)
+- Live Site URL: [https://anish-udupa.github.io/react-todo-app/](https://anish-udupa.github.io/react-todo-app/)
 
 ## My process
 

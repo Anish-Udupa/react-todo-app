@@ -1,8 +1,14 @@
+@font-face {
+  font-family: "JosephinSans";
+  src: url("fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'JosephinSans', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,14 +16,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-@font-face {
-  font-family: header-font;
-  src: url("fonts/JosefinSans-Regular.ttf") format(".ttf");
-  font-weight: 100;
-  font-size: 2em;
-  letter-spacing: 1px;
 }
 
 :root {
@@ -41,6 +39,7 @@ code {
   --component-faded-text-color: var(--dark-grayish-blue);
   --component-hover-text-color: var(--Light-grayish-blue-hover);
   --component-selected-text-color: var(--bright-blue);
+  --heading-text-color: var(--light-grayish-blue);
   --text-color: var(--light-grayish-blue);
   --font-size: 14px;
 
@@ -56,7 +55,22 @@ body.light-mode {
   --app-bg-color: var(--very-light-grayish-blue);
   --component-bg-color: var(--very-light-gray);
   --component-faded-text-color: var(--dark-grayish-blue);
-  --component-hover-text-color: var(--Light-grayish-blue-hover);
+  --component-hover-text-color: var(--very-dark-grayish-blue);
   --component-selected-text-color: var(--bright-blue);
-  --text-color: var(--very-dark-grayish-blue);
+  --text-color: var(--very-dark-blue);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid rgb(7, 118, 228);
 }

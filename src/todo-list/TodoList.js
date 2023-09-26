@@ -41,9 +41,11 @@ function TodoList() {
             </div>
             <TodoInput />
             <div id="todo-list-items-container">
-                {task_filter === 0 && tasks.map(task => <TodoListItem key={task.id} task={task} />)}
-                {task_filter === 1 && (tasks.filter(task => task.is_completed === false)).map(task => <TodoListItem key={task.id} task={task} />)}
-                {task_filter === 2 && (tasks.filter(task => task.is_completed === true)).map(task => <TodoListItem key={task.id} task={task} />)}
+                <div id="todo-list-items-details-container">
+                    {task_filter === 0 && tasks.map(task => <TodoListItem key={task.id} task={task} />)}
+                    {task_filter === 1 && (tasks.filter(task => task.is_completed === false)).map(task => <TodoListItem key={task.id} task={task} />)}
+                    {task_filter === 2 && (tasks.filter(task => task.is_completed === true)).map(task => <TodoListItem key={task.id} task={task} />)}
+                </div>
                 <div id="todo-list-items-status-container">
                     <p>{tasks_count} items left</p>
                     <div id="todo-list-items-filter-container">
@@ -53,6 +55,17 @@ function TodoList() {
                     </div>
                     <p className="todo-list-items-filter" onClick={handleClearCompletedTasks}>Clear Completed</p>
                 </div>
+
+                <div id="todo-list-items-status-container-mobile">
+                    <p>{tasks_count} items left</p>
+                    <p className="todo-list-items-filter" onClick={handleClearCompletedTasks}>Clear Completed</p>
+                </div>
+            </div>
+
+            <div id="todo-list-items-filter-container-mobile">
+                <p className={`todo-list-items-filter ${task_filter === 0 && "todo-list-items-filter-selected"}`} onClick={() => setTaskFilter(0)}>All</p>
+                <p className={`todo-list-items-filter ${task_filter === 1 && "todo-list-items-filter-selected"}`} onClick={() => setTaskFilter(1)}>Active</p>
+                <p className={`todo-list-items-filter ${task_filter === 2 && "todo-list-items-filter-selected"}`} onClick={() => setTaskFilter(2)}>Completed</p>
             </div>
         </div>
     )

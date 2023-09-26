@@ -11,6 +11,15 @@ div.todo-list-item {
 p.todo-list-item-name {
     width: 100%;
     height: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.todo-list-item-name:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
 }
 
 p.todo-list-item-name-completed {
@@ -19,6 +28,9 @@ p.todo-list-item-name-completed {
     text-decoration: line-through;
     text-decoration-line: line-through;
     color: var(--component-faded-text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 div.icon-circle-filled {

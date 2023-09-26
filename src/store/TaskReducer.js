@@ -1,7 +1,41 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// List of predefined tasks as stated on frontend mentor
+const initial_tasks = [
+    {
+        id: 1,
+        name: "Complete online JavaScript course",
+        is_completed: true,
+    },
+    {
+        id: 2,
+        name: "Jog around the park 3x",
+        is_completed: false,
+    },
+    {
+        id: 3,
+        name: "10 minutes meditation",
+        is_completed: false,
+    },
+    {
+        id: 4,
+        name: "Read for 1 hour",
+        is_completed: false,
+    },
+    {
+        id: 5,
+        name: "Pick up groceries",
+        is_completed: false,
+    },
+    {
+        id: 6,
+        name: "Complete Todo App on Frontend Mentor",
+        is_completed: false,
+    },
+]
+
 const initial_state = {
-    tasks: [],
+    tasks: [...initial_tasks],
 }
 
 const TaskSlice = createSlice({
@@ -16,7 +50,7 @@ const TaskSlice = createSlice({
             });
         },
         deleteTask: (state, action) => {
-            state.tasks = state.tasks.filter(item => item.id != action.payload.task_id);
+            state.tasks = state.tasks.filter(item => item.id !== action.payload.task_id);
         },
         updateTask: (state, action) => {
             state.tasks = state.tasks.map(item => {
@@ -26,7 +60,7 @@ const TaskSlice = createSlice({
             });
         },
         deleteAllCompletedTasks: (state) => {
-            state.tasks = state.tasks.filter(item => item.is_completed == false);
+            state.tasks = state.tasks.filter(item => item.is_completed === false);
         }
     }
 });

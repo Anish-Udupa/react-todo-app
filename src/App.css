@@ -6,8 +6,15 @@
   align-items: center;
   justify-content: center;
   background-color: var(--app-bg-color);
-  background-image: url("../images/bg-desktop-dark.jpg");
+  /* background-image: url("../images/bg-desktop-dark.jpg"); */
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   color: var(--text-color);
   font-size: var(--font-size);
+}
+
+@media screen and (max-width: 576px) {
+  .App {
+    background-size: contain;
+  }
 }

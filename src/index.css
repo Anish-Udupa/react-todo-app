@@ -25,6 +25,9 @@ code {
   --check-background-gradient1: hsl(192, 100%, 67%);
   --check-background-gradient2: hsl(280, 87%, 65%);
 
+  /* Background image */
+  --bg-image: url("../images/bg-desktop-dark.jpg");
+
   /* Dark Mode colors */
   --very-dark-blue: hsl(235, 21%, 11%);
   --very-dark-desaturated-blue: hsl(235, 24%, 19%);
@@ -34,6 +37,8 @@ code {
   --very-dark-grayish-blue: hsl(233, 14%, 35%);
   --very-dark-grayish-blue: hsl(237, 14%, 26%);
 
+
+  /* Dark Mode variables */
   --app-bg-color: var(--very-dark-blue);
   --component-bg-color: var(--very-dark-desaturated-blue);
   --component-faded-text-color: var(--dark-grayish-blue);
@@ -43,7 +48,7 @@ code {
   --text-color: var(--light-grayish-blue);
   --font-size: 14px;
 
-  /* Light Mode */
+  /* Light Mode colors */
   --very-light-gray: hsl(0, 0%, 98%);
   --very-light-grayish-blue: hsl(236, 33%, 92%);
   --light-grayish-blue: hsl(233, 11%, 84%);
@@ -58,6 +63,7 @@ body.light-mode {
   --component-hover-text-color: var(--very-dark-grayish-blue);
   --component-selected-text-color: var(--bright-blue);
   --text-color: var(--very-dark-blue);
+  --bg-image: url("../images/bg-desktop-light.jpg");
 }
 
 /* Scrollbar */
@@ -73,4 +79,14 @@ body.light-mode {
 ::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid rgb(7, 118, 228);
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --bg-image: url("../images/bg-mobile-dark.jpg");
+  }
+
+  body.light-mode {
+    --bg-image: url("../images/bg-mobile-light.jpg");
+  }
 }

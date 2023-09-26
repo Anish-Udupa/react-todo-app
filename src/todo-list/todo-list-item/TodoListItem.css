@@ -33,6 +33,12 @@ p.todo-list-item-name-completed {
     text-overflow: ellipsis;
 }
 
+p.todo-list-item-name-completed:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
+}
+
 div.icon-circle-filled {
     height: 20px;
     width: 20px;
